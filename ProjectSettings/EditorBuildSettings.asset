@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: b5aaee0266a58c44fb2c61bc310263e8
   - enabled: 1
+    path: Assets/Scenes/Help.unity
+    guid: fc95e0f537f92374591e9ae3dc0bdb14
+  - enabled: 1
     path: Assets/Scenes/SingeplayerScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -19,5 +22,8 @@ EditorBuildSettings:
     guid: 5bfadef686afb8145acaf7b53b4e985f
   - enabled: 1
     path: Assets/Scenes/MP_GameOver.unity
-    guid: 9c95a665a37446640b5f27c2f2b373f7
+    guid: 760810a74d15abc4d8a06e7cb6c4b8ee
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

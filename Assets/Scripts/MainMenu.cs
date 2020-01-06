@@ -14,5 +14,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("TwoPlayersScene");
     }
+    // This method is called if the Help Button is pressed
+    public void OnHelpPress()
+    {
+        SceneManager.LoadScene("Help");
+    }
 
 }

@@ -7,16 +7,17 @@ public class ScoreManager : MonoBehaviour
     public float score;
     public bool death = false;
     // This is multiplied by the time the player is alive to create a score bonus for staying aliv;
-    private float timeAlivMult = 0.15f;
+    private float timeAlivMult = 0.00015f;
     // This is the time until the timeAlivMult variable's value increases;
-    private float timeAlivInc = 10f;
+    private float timeAlivInc = 60f;
     private float timeTillInc;
-    private float timeAlivMultS = 0.05f;
+    private float timeAlivMultInc = 0.0005f;
     private Text text;
     void Start()
     {
         text = GetComponent<Text>();
         highScore = PlayerPrefs.GetInt("High Score");
+        timeTillInc = timeAlivInc;
     }
     void Update()
     {
@@ -32,7 +33,13 @@ public class ScoreManager : MonoBehaviour
             }
         } else
         {
+            score += Time.time * timeAlivMult;
+            if (Time.time > timeTillInc)
+            {
+                timeTillInc = Time.time + timeAlivInc;
+                timeAlivMult += timeAlivMultInc;
 
+            }
         }
     }
 }

@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\TheStingRay.cs" />
     <Compile Include="Assets\Scripts\TheStingRayController.cs" />
+    <Compile Include="Assets\Scripts\TutorialSceneManager.cs" />
     <Compile Include="Assets\Scripts\UFO.cs" />
     <Compile Include="Assets\Scripts\UFOController.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
