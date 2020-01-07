@@ -42,9 +42,10 @@ GameObject:
   - component: {fileID: 8483486942219165179}
   - component: {fileID: 8483486942219165176}
   - component: {fileID: 8868720573447969399}
-  - component: {fileID: 5627318012153144813}
   - component: {fileID: 4871406560308948474}
   - component: {fileID: 938326236}
+  - component: {fileID: 1556807868}
+  - component: {fileID: 2095887359697707521}
   m_Layer: 0
   m_Name: The Sting Ray
   m_TagString: Player
@@ -155,18 +156,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &5627318012153144813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483486942219165180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6877b6018c4b5444823dfd77b78a666, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4871406560308948474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,10 +174,9 @@ MonoBehaviour:
   bulletSpawns:
   - {fileID: 8483486943382449420}
   - {fileID: 8483486941720327526}
-  moveSpeed: 0
+  moveSpeed: 10
   bulletPrefab: {fileID: 3274932711782518828, guid: 2cb6c5c7e6b202e41bb078cea849d91f,
     type: 3}
-  startAmmo: 100
   RateOfFire: 2
 --- !u!95 &938326236
 Animator:
@@ -200,7 +188,7 @@ Animator:
   m_GameObject: {fileID: 8483486942219165180}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6de1f5da06a96646ae9a3a6d7e97000, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -209,6 +197,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1556807868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483486942219165180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48501163c24dd04eb44e1c0e4062183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPF: {fileID: 1319155536587191246, guid: e05ff8093fa11a64cacc0b4004d7d274,
+    type: 3}
+  explosionColor: {r: 0.5803922, g: 0.2509804, b: 0.25882354, a: 1}
+  objSprite: {fileID: 0}
+--- !u!114 &2095887359697707521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483486942219165180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46bf577650ff794baeb9ea8d05e5918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8483486943382449421
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,13 +1,10 @@
-﻿// This class contains functions to control the Sting Ray
-// Also almost identical to the UFO
-// TODO: Make a more efficient way of adding spaceships rather than repeating the smae code
+﻿// This class contains functions to control the UFO
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class TheStingRayController : MonoBehaviour
+public class SpaceshipController : MonoBehaviour
 {
     public Animator playerAnim;
     public Rigidbody2D playerBody;
@@ -16,8 +13,6 @@ public class TheStingRayController : MonoBehaviour
     public float moveSpeed;
     private float speedY = 10;
     public GameObject bulletPrefab;
-    public float startAmmo;
-    private float ammo;
     public float RateOfFire;
     private Vector3 velocity;
     private bool IsMoving = false;
@@ -25,19 +20,17 @@ public class TheStingRayController : MonoBehaviour
     void Start()
     {
         score = FindObjectOfType<ScoreManager>();
-        ammo = startAmmo;
-        RateOfFire = 2f;
     }
     public void MechanicsLoop()
     {
         // Movement
-        moveSpeed = Input.GetAxis("Horizontal2");
-        speedY = Input.GetAxis("Vertical2");
+        moveSpeed = Input.GetAxis("Horizontal1");
+        speedY = Input.GetAxis("Vertical1");
         velocity.Set(moveSpeed, speedY, 0);
         playerBody.MovePosition(playerTransform.position + velocity);
 
         // Shooter code
-        if (Input.GetKey(KeyCode.Return))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (RateOfFire < Time.time)
             {
@@ -46,6 +39,7 @@ public class TheStingRayController : MonoBehaviour
             }
         }
     }
+    // Shoots bullets
     public void Shoot()
     {
         score.score += 0.5f;
@@ -54,6 +48,7 @@ public class TheStingRayController : MonoBehaviour
         bullet1.GetComponent<Bullet>().homeObject = "Player";
         bullet2.GetComponent<Bullet>().homeObject = "Player";
     }
+    // Checks if player is moving
     public void MovementCheck()
     {
         if (speedY <= 0)
@@ -65,6 +60,7 @@ public class TheStingRayController : MonoBehaviour
             IsMoving = true;
         }
     }
+    // Tells the animator whether the player is moving or not
     public void Animate()
     {
         if (IsMoving)
@@ -76,10 +72,18 @@ public class TheStingRayController : MonoBehaviour
             playerAnim.SetBool("IsMoving", false);
         }
     }
+    // Loads the game over scene when the player dies
     private void OnDestroy()
     {
         score.death = true;
-        SceneManager.LoadScene("MP_GameOver");
+        if (SceneManager.GetActiveScene().name == "SingeplayerScene")
+        {
+            SceneManager.LoadScene("SP_GameOver");
+        }
+        else
+        {
+            SceneManager.LoadScene("MP_GameOver");
+        }
     }
 
 }

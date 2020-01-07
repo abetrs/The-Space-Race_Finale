@@ -649,28 +649,6 @@ MonoBehaviour:
   highScore: 0
   score: 0
   death: 0
---- !u!1 &1556807867 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8483486942219165180, guid: f27748574ed92024d9b417deb4fe0cce,
-    type: 3}
-  m_PrefabInstance: {fileID: 6705086502101031950}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1556807868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1556807867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b48501163c24dd04eb44e1c0e4062183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPF: {fileID: 1319155536587191246, guid: e05ff8093fa11a64cacc0b4004d7d274,
-    type: 3}
-  explosionColor: {r: 0.5803922, g: 0.2509804, b: 0.25882354, a: 1}
-  objSprite: {fileID: 0}
 --- !u!1 &1828106972
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,9 +899,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 938326236, guid: f27748574ed92024d9b417deb4fe0cce, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: f6de1f5da06a96646ae9a3a6d7e97000, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27748574ed92024d9b417deb4fe0cce, type: 3}

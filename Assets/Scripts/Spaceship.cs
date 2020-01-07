@@ -1,12 +1,36 @@
-﻿// This interface is an outline for the properties of each spaceship
-// I don't end up using this in the end for my Spaceships and instead write duplicate code which I hope to patch in the future
+﻿// This class tells Unity what to do with the UFO.
 using UnityEngine;
 using System.Collections.Generic;
-interface Spaceship
+
+public class Spaceship : MonoBehaviour
 {
-    float speed { get; set; }
-    float dps { get; set; }
-    float startAmmo { get; set; }
-    List<Transform> bulletSpawn { get; set; }
-    GameObject bulletPrefab { get; set; }
+
+    // Reference to the ufo controller
+    private SpaceshipController controller;
+
+    private void Start()
+    {
+        controller = GetComponent<SpaceshipController>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D objCollision)
+    {
+        // Two players cannot collide with each other
+        Collider2D objCollider = objCollision.collider;
+        if (objCollider.gameObject.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(objCollider, GetComponent<Collider2D>());
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        // Calls controller functions
+        controller.MechanicsLoop();
+    }
+    private void Update()
+    {
+        controller.MovementCheck();
+        controller.Animate();
+    }
 }

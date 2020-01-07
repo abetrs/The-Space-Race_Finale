@@ -2,20 +2,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class UFO : MonoBehaviour, Spaceship
+public class SpaceshipMP : MonoBehaviour
 {
 
-    public float speed { get; set; } = 12;
-    public float dps { get; set; } = 11;
-    public float startAmmo { get; set; } = 100;
-    public List<Transform> bulletSpawn { get; set; }
-    public GameObject bulletPrefab { get; set; }
     // Reference to the ufo controller
-    private UFOController controller;
+    private Spaceship_MPController controller;
 
     private void Start()
     {
-        controller = GetComponent<UFOController>();
+        controller = GetComponent<Spaceship_MPController>();
     }
 
     private void OnCollisionEnter2D(Collision2D objCollision)

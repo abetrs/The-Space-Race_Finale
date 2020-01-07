@@ -19,5 +19,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Help");
     }
-
+    // This method is called if the Exit Button is pressed
+    public void OnExitPress()
+    {
+        Application.Quit();
+        Debug.Log("Quitting");
+    }
 }
