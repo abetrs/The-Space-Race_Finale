@@ -17,10 +17,7 @@ public class AsteroidBubbleEffect : MonoBehaviour
             objCollider.gameObject.GetComponent<Destructible>().Die();
         }
     }
-    void Update()
-    {
 
-    }
 
 
 }

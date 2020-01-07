@@ -1,6 +1,5 @@
 ﻿// This class tells Unity what to do with the UFO.
 using UnityEngine;
-using System.Collections.Generic;
 
 public class Spaceship : MonoBehaviour
 {

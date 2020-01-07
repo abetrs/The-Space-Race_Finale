@@ -1,7 +1,4 @@
-﻿// This class contains functions to control the Sting Ray
-// Also almost identical to the UFO
-// TODO: Make a more efficient way of adding spaceships rather than repeating the smae code
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 

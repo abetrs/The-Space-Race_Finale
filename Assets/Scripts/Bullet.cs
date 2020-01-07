@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour
             score.score += 10;
         }
         // if the player shoots an asteroid they get 6 points
-        else if (objCollider.tag == "Asteroid")
+        else if (objCollider.tag == "Asteroid" && gameObject.tag == "Player")
         {
             Kill(objCollider);
             score.score += 6;

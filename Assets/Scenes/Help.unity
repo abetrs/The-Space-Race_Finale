@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Text: "In this game you play as one of 5 spaceships. \n\nYou control the spaceship
     using the WASD keys  and shoot using Space for the following Spaceships:\n\n.\n.\n\nThese
     spaceships are only playable in the 2 player mode and use the arrow keys for movement
-    and the enter/return key for shooting:\n.\n.\n.\n\n\nNow go on and get ready to
+    and the enter/return key for shooting:\n\n.\n.\n\n\nNow go on and get ready to
     get your next high score!"
 --- !u!222 &31550978
 CanvasRenderer:

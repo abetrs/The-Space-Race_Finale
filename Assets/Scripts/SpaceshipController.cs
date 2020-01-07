@@ -1,5 +1,4 @@
-﻿// This class contains functions to control the UFO
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
