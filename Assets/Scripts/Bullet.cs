@@ -35,20 +35,24 @@ public class Bullet : MonoBehaviour
         if (gameObject.tag == "EvilBullet" && objCollider.tag == "Player")
         {
             Kill(objCollider);
+            Destroy(gameObject);
+
         }
         // if the player shoots a shooter they get 10 points
         else if (gameObject.tag == "Bullet" && objCollider.tag == "Shooter")
         {
             Kill(objCollider);
             score.score += 10;
+            Destroy(gameObject);
         }
         // if the player shoots an asteroid they get 6 points
-        else if (objCollider.tag == "Asteroid" && gameObject.tag == "Player")
+        else if (objCollider.tag == "Asteroid" && gameObject.tag == "Bullet")
         {
             Kill(objCollider);
             score.score += 6;
+            Destroy(gameObject);
         }
-        
+
     }
     void FixedUpdate()
     {

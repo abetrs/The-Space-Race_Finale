@@ -23,6 +23,8 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private GameObject MediumAsteroidPrefab;
     [SerializeField]
+    private GameObject VolcanicAsteroidPrefab;
+    [SerializeField]
     private GameObject ShooterPrefab;
     // These are the y positions where the two objects will spawn
     [SerializeField]
@@ -33,7 +35,7 @@ public class Spawner : MonoBehaviour
     {
         timeTillNextSpawn = spawnTime;
     }
-
+    
     void Update()
     {
         if (Time.time > timeTillNextSpawn)
@@ -54,7 +56,7 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         spawnPos = Random.Range(-10, 10);
-        randomNumber = Random.Range(1, 10);
+        randomNumber = Random.Range(1, 11);
         if (randomNumber == 1)
         {
             SpawnAsteroid("Big");
@@ -71,6 +73,10 @@ public class Spawner : MonoBehaviour
         {
             SpawnShooter();
         }
+        else if (randomNumber == 9 || randomNumber == 10)
+        {
+            SpawnAsteroid("Volcanic");
+        }
     }
     // This method spawns an asteroid with a variable for which type of asteroid to spawn
     private void SpawnAsteroid(string type)
@@ -85,6 +91,9 @@ public class Spawner : MonoBehaviour
                 break;
             case "Small":
                 Instantiate(SmallAsteroidPrefab, new Vector3(spawnPos, asteroidAxis.position.y, 0), SmallAsteroidPrefab.transform.rotation);
+                break;
+            case "Volcanic":
+                Instantiate(VolcanicAsteroidPrefab, new Vector3(spawnPos, asteroidAxis.position.y, 0), Quaternion.Euler(new Vector3(VolcanicAsteroidPrefab.transform.rotation.x, VolcanicAsteroidPrefab.transform.rotation.y, Random.Range(0f, 360f))));
                 break;
         }
     }

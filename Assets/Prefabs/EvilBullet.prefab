@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTimer: 5
   homeObject: 
-  speed: 20
+  speed: 100
   score: {fileID: 0}
 --- !u!82 &3064984078635284342
 AudioSource:
@@ -159,7 +159,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aca623bb47c104147b2195f66173f563, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.529
   m_Pitch: 1
   Loop: 0
   Mute: 0

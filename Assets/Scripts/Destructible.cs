@@ -8,12 +8,17 @@ public class Destructible : MonoBehaviour
     // Color of explosion particles
     public Color explosionColor;
     // The sprite that determines the shape of the particle effect
-    [HideInInspector]
     public Sprite objSprite;
 
     public void Awake()
     {
-        objSprite = GetComponent<SpriteRenderer>().sprite;
+        Debug.Log(objSprite);
+        if (objSprite == null)
+        {
+            objSprite = GetComponent<SpriteRenderer>().sprite;
+            Debug.Log(objSprite);
+
+        }
     }
     // The die function is responsible for safely destroying all game objects it is attached to
     // First it sets off the explosion particle effect
@@ -22,6 +27,13 @@ public class Destructible : MonoBehaviour
     // Then it destroys the game object
     public void Die()
     {
+        bool logged = true;
+        if (logged)
+        {
+            Debug.Log("Dying");
+            Debug.Log("Sprite: " + objSprite);
+            logged = false;
+        }
         explosionPF = Instantiate(explosionPF, transform.position, transform.rotation);
         explosionPF.GetComponent<ExplosionController>().SetColor(explosionColor);
         explosionPF.GetComponent<ExplosionController>().SetSprite(objSprite);

@@ -1,7 +1,7 @@
 ﻿// This script manages the asteroids in the game.
 using UnityEngine;
 
-public class AsteroidBubbleEffect : MonoBehaviour
+public class Asteroid : MonoBehaviour
 {
 
     private void OnCollisionEnter2D(Collision2D objCollision)
@@ -11,7 +11,12 @@ public class AsteroidBubbleEffect : MonoBehaviour
         if (objCollider.tag == "DeathWall")
         {
             Destroy(gameObject);
-        } else if (objCollider.tag == "Player")
+        }
+        else if (objCollider.tag == "Asteroid")
+        {
+            Physics2D.IgnoreCollision(objCollider, GetComponent<Collider2D>());
+        }
+        else if (objCollider.tag == "Player")
         {
             // If the asteroid hits the player it calls the Die method of the player to cause them to explode.
             objCollider.gameObject.GetComponent<Destructible>().Die();

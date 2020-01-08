@@ -177,7 +177,7 @@ MonoBehaviour:
   moveSpeed: 10
   bulletPrefab: {fileID: 3274932711782518828, guid: 2cb6c5c7e6b202e41bb078cea849d91f,
     type: 3}
-  RateOfFire: 2
+  RateOfFire: 4
 --- !u!95 &938326236
 Animator:
   serializedVersion: 3
