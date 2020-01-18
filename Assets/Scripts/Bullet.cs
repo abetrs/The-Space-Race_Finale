@@ -13,10 +13,10 @@ public class Bullet : MonoBehaviour
     private Vector3 velocity;
     private Rigidbody2D bulletBody;
     private BoxCollider2D bulletCol;
-    public ScoreManager score;
+    private ScoreSystem scoreSystem;
     void Start()
     {
-        score = FindObjectOfType<ScoreManager>();
+        scoreSystem = FindObjectOfType<ScoreSystem>();
         bulletBody = GetComponent<Rigidbody2D>();
         timeTillDeath = deathTimer + Time.time;
         velocity = new Vector3(0, speed, 0);
@@ -42,14 +42,14 @@ public class Bullet : MonoBehaviour
         else if (gameObject.tag == "Bullet" && objCollider.tag == "Shooter")
         {
             Kill(objCollider);
-            score.score += 10;
+            //score.score += 10;
             Destroy(gameObject);
         }
         // if the player shoots an asteroid they get 6 points
         else if (objCollider.tag == "Asteroid" && gameObject.tag == "Bullet")
         {
             Kill(objCollider);
-            score.score += 6;
+            //score.score += 6;
             Destroy(gameObject);
         }
 

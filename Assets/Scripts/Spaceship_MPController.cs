@@ -14,11 +14,11 @@ public class Spaceship_MPController : MonoBehaviour
     public GameObject bulletPrefab;
     public float RateOfFire;
     private Vector3 velocity;
+    private ScoreSystem scoreSystem;
     private bool IsMoving = false;
-    ScoreManager score;
     void Start()
     {
-        score = FindObjectOfType<ScoreManager>();
+
     }
     public void MechanicsLoop()
     {
@@ -40,11 +40,11 @@ public class Spaceship_MPController : MonoBehaviour
     }
     public void Shoot()
     {
-        score.score += 0.5f;
+        scoreSystem.AddScore(1, "Player2");
         GameObject bullet1 = Instantiate(bulletPrefab, bulletSpawns[0].position, bulletPrefab.transform.rotation);
         GameObject bullet2 = Instantiate(bulletPrefab, bulletSpawns[1].position, bulletPrefab.transform.rotation);
-        bullet1.GetComponent<Bullet>().homeObject = "Player";
-        bullet2.GetComponent<Bullet>().homeObject = "Player";
+        bullet1.GetComponent<Bullet>().homeObject = "Player2";
+        bullet2.GetComponent<Bullet>().homeObject = "Player2";
     }
     public void MovementCheck()
     {
@@ -70,7 +70,6 @@ public class Spaceship_MPController : MonoBehaviour
     }
     private void OnDestroy()
     {
-        score.death = true;
         SceneManager.LoadScene("MP_GameOver");
     }
 
