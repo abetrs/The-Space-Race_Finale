@@ -12,9 +12,11 @@ public class Destructible : MonoBehaviour
 
     public void Awake()
     {
+        Debug.Log(objSprite);
         if (objSprite == null)
         {
             objSprite = GetComponent<SpriteRenderer>().sprite;
+            Debug.Log(objSprite);
 
         }
     }
@@ -25,6 +27,13 @@ public class Destructible : MonoBehaviour
     // Then it destroys the game object
     public void Die()
     {
+        bool logged = true;
+        if (logged)
+        {
+            Debug.Log("Dying");
+            Debug.Log("Sprite: " + objSprite);
+            logged = false;
+        }
         explosionPF = Instantiate(explosionPF, transform.position, transform.rotation);
         explosionPF.GetComponent<ExplosionController>().SetColor(explosionColor);
         explosionPF.GetComponent<ExplosionController>().SetSprite(objSprite);
